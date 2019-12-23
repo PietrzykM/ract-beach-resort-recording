@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
-  --mainWhite: #fff;
+  --primaryColor: #FAE417;
+  --mainWhite: #494949;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
   --mainGrey: #ececec;
@@ -159,13 +159,13 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 66px);
-  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  background: url("./images/1.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .roomsHero {
-  background-image: url("./images/room-2.jpeg");
+  background-image: url("./images/2.jpg");
   min-height: 60vh;
 }
 /* End of Hero */
@@ -173,7 +173,7 @@ h6 {
 .banner {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
-  color: var(--mainWhite);
+  color:#FAE417;
   padding: 2rem 1rem;
   text-align: center;
   text-transform: capitalize;
@@ -252,7 +252,6 @@ h6 {
 }
 .services h6 {
   letter-spacing: var(--mainSpacing);
-  text-transform: capitalize;
 }
 .services p {
   width: 80%;
@@ -318,7 +317,7 @@ h6 {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: #FAE417;
   color: var(--mainWhite);
   padding: 0.3rem 0.6rem 0.5rem;
   border-bottom-right-radius: 1rem;
@@ -382,6 +381,13 @@ h6 {
   display: grid;
   grid-template-columns: 1fr;
   margin: 2rem auto;
+  
+}
+.single-room-info h3 {
+  color: #FAE417;
+}
+.single-room-info h6 {
+  color: #FFFFD2;
 }
 .desc,
 .info {
@@ -390,9 +396,11 @@ h6 {
 .desc h3 {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  color: #FAE417;
 }
 .desc p {
   line-height: 1.5;
+  color:#FFFFD2;
 }
 .info h3,
 .info h6 {
@@ -410,6 +418,7 @@ h6 {
 .room-extras h6 {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  color: #FAE417;
 }
 .extras {
   list-style-type: none;
@@ -417,6 +426,7 @@ h6 {
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-column-gap: 2rem;
   grid-row-gap: 1rem;
+  color:#FFFFD2;
 }
 @media screen and (min-width: 992px) {
   .single-room-images,
@@ -476,13 +486,15 @@ h6 {
   text-transform: capitalize;
 }
 .form-group label {
+  color: #FAE417;
   display: block;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 0.5rem;
 }
 .form-control {
   width: 100%;
-  background: transparent;
+  color:#FAE417;
+  background: #494949;
   font-size: 1rem;
 }
 .size-inputs {

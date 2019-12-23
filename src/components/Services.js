@@ -1,36 +1,36 @@
 import React, { Component } from 'react'
-import {FaCocktail,FaHiking,FaShuttleVan,FaBeer} from 'react-icons/fa'
+import {FaMoneyBillWave,FaMusic,FaParking,FaCoffee} from 'react-icons/fa'
 import Title from './Title'
 
 export default class Services extends Component {
     state ={
         services:[
             {
-                icon:<FaCocktail/>,
-                title:"free cocktails",
-                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod'
+                icon:<FaMoneyBillWave/>,
+                title:"Płatności",
+                info: 'Akceptujemy płatności kartą oraz gotówką. Możliwość wejścia dzięki kartą partnerskim.'
             },
             {
-            icon:<FaHiking/>,
-                title:"Endless Hiking",
-                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod'
+            icon:<FaMusic/>,
+                title:"Najlepsze nagłośnienie",
+                info: 'Korzystamy z najlepszej jakości sprzętu, dzięki czemu muzyka na zajęciach przesiąknie każdego!'
             },
             {
-            icon:<FaShuttleVan/>,
-                title:"Free shuttle",
-                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod'
+            icon:<FaParking/>,
+                title:"Darmowy parking",
+                info: 'Na terenie obiektu znajduje się bezpłatny parking dla samochodów osobowych. Pobierz bilet i podbij na recepcji, aby bezpłatnie opuścić posesje.'
             },
             {
-            icon:<FaBeer/>,
-                title:"Strongest Beer",
-                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod'
+            icon:<FaCoffee/>,
+                title:"Darmowa kawa",
+                info: 'Przy recepcji znajduje się ekspres z najlepszą kawą całkowicie za darmo dla wszystkich naszych kursantów. Naierz energii pomiędzy zajęciami!'
             }
         ]
     }
     render() {
         return (
             <section className="services">
-                <Title title = 'services'/>
+                <Title title = 'Tylko u nas'/>
                 <div className ="services-center">
                    {this.state.services.map((item,index) =>{
                     return <article key={index} className="service">

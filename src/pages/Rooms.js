@@ -8,9 +8,9 @@ export const Rooms = () => {
     return (
     <>
     <Hero hero="roomsHero">
-        <Banner title="our rooms">
+        <Banner title="Kursy">
             <Link to="/" className="btn-primary">
-                return home
+                Strona główna
             </Link>
         </Banner>
     </Hero>

@@ -10,15 +10,15 @@ class RoomProvider extends Component {
         sortedRooms:[],
         featuredRooms:[],
         loading:true,
-        type: 'all',
-        capacity: 1,
+        type: 'wszystkie',
+        capacity: 'wszystkie',
         price: 0,
         minPrice: 0,
         maxPrice: 0,
         minSize: 0,
         maxSize: 0,
         breakfst: false,
-        pets: false
+        solo: false
     };
     //getData
     getData = async () =>{
@@ -98,24 +98,24 @@ class RoomProvider extends Component {
             price,
             minSize,
             maxSize,
-            breakfast,
-            pets
+            pair,
+            solo
         } = this.state
 
 // all the rooms
         let tempRooms =[...rooms];
 // transform values
-        capacity = parseInt(capacity);
+        // capacity = parseInt(capacity);
         price = parseInt(price);
 
 //filter by type
-        if(type !== 'all'){
+        if(type !== 'wszystkie'){
             tempRooms = tempRooms.filter(room => room.type === type)
         }
 
 //filter by capacity
-        if(capacity !==1){
-            tempRooms = tempRooms.filter(room=> room.capacity >= capacity)
+        if(capacity !=='wszystkie'){
+            tempRooms = tempRooms.filter(room=> room.capacity === capacity)
         }
 
 //filter by price
@@ -124,14 +124,14 @@ class RoomProvider extends Component {
 //filter by size
         tempRooms = tempRooms.filter(room => room.size >= minSize && room.size <= maxSize)
 
-//filter by breakfast
-        if(breakfast){
-            tempRooms = tempRooms.filter(room => room.breakfast === true)
+//filter by pair
+        if(pair){
+            tempRooms = tempRooms.filter(room => room.pair === true)
         }
 
-//filter by pets
-        if(pets){
-            tempRooms = tempRooms.filter(room => room.pets === true)
+//filter by solo
+        if(solo){
+            tempRooms = tempRooms.filter(room => room.solo === true)
         }
 
 

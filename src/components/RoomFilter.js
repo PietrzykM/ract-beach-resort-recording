@@ -19,28 +19,39 @@ export default function RoomFilter({rooms}) {
         maxPrice,
         minSize,
         maxSize,
-        breakfast,
-        pets
+        pair,
+        solo
     } = context;
     //get unique types
     let types = getUnique(rooms,'type');
     // add "all" type
-    types = ['all',...types];
+    types = ['wszystkie',...types];
+
     //map to jsx
     types = types.map((item,index)=>{
         return <option value={item} key={index}>{item}</option>
     })
 
+    
+
     let people = getUnique(rooms,'capacity');
+
+    // add "all" type
+    people = ['wszystkie',...people];
+
     people = people.map((item,index)=>{
-        return <option key={index} value={item}>{item}</option>
+        return <option value={item} key={index}>{item}</option>
     })
+    
+    // people = people.map((item,index)=>{
+    //     return <option key={index} value={item}>{item}</option>
+    // })
     return <section className="filter-containter">
-        <Title title="search rooms" />
+        <Title title="Szukaj kursu" />
         <form className="filter-form">
             {/*select type */}
             <div className="form-group">
-                <label htmlFor="type">room type</label>
+                <label htmlFor="type">Technika</label>
                 <select name="type" id="type" value={type} className="form-control"
                 onChange={handleChange}>
                     {types}
@@ -49,7 +60,7 @@ export default function RoomFilter({rooms}) {
             {/*end select type */}
             {/*guests */}
             <div className="form-group">
-                <label htmlFor="capacity">Guests</label>
+                <label htmlFor="capacity">Dzień tygodnia</label>
                 <select name="capacity" id="capacity" value={capacity} 
                 className="form-control"
                 onChange={handleChange}>
@@ -60,7 +71,7 @@ export default function RoomFilter({rooms}) {
             {/* room price */}
             <div className ="form-group">
                 <label htmlFor="price">
-                    room price ${price}
+                    Cena {price}zł
                     <input type="range" name="price" min={minPrice}
                     max ={maxPrice} id ="price" value={price} onChange=
                     {handleChange} className="form-control" />
@@ -69,7 +80,7 @@ export default function RoomFilter({rooms}) {
             {/* end of room price */}
             {/* size */}
             <div className="form-group">
-            <label htmlFor="size">room size</label>
+            <label htmlFor="size">Wielkość sali</label>
             <div className="size-inputs">
                 <input type="number" name="minSize" id="size" value={minSize}
                 onChange={handleChange} className="size-input"/>
@@ -81,14 +92,14 @@ export default function RoomFilter({rooms}) {
             {/* extras */}
             <div className ="form-group">
                 <div className="single-extra">
-                    <input type="checkbox" name="breakfast" id="breakfast"
-                    checked={breakfast} onChange={handleChange}/>
-                    <label htmlFor="breakfast">breakfast</label>
+                    <input type="checkbox" name="pair" id="pair"
+                    checked={pair} onChange={handleChange}/>
+                    <label htmlFor="pair">Pary</label>
                 </div>
                 <div className="single-extra">
-                    <input type="checkbox" name="pets" id="pets"
-                    checked={pets} onChange={handleChange}/>
-                    <label htmlFor="pets">pets</label>
+                    <input type="checkbox" name="solo" id="solo"
+                    checked={solo} onChange={handleChange}/>
+                    <label htmlFor="solo">Solo</label>
                 </div>
             </div>
             {/* end of extras */}
